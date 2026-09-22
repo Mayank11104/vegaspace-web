@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main className="min-h-screen bg-zinc-950 text-white selection:bg-white/10 flex flex-col items-center justify-center relative overflow-hidden font-sans">
+    <main className="min-h-[200vh] bg-zinc-950 text-white selection:bg-white/10 flex flex-col items-center pt-40 relative overflow-hidden font-sans">
       {/* Dynamic Background Glow Elements */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] h-[500px] bg-gradient-to-b from-blue-600/20 via-purple-600/10 to-transparent blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] bg-gradient-to-tr from-cyan-500/10 to-indigo-500/10 blur-[100px] rounded-full pointer-events-none" />

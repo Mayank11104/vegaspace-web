@@ -17,13 +17,18 @@ export const metadata: Metadata = {
   description: "The AI-orchestrated unified developer workspace that bridges your IDE, terminal, and DevOps pipelines.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+import { Navbar } from "@/components/layout/navbar";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
