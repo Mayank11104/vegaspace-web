@@ -25,17 +25,21 @@ export const metadata: Metadata = {
 import { Navbar } from "@/components/layout/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { IntroLoader } from "@/features/landing/components/IntroLoader";
+import { cookies } from "next/headers";
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const cookieStore = await cookies();
+  const hasSeenIntro = cookieStore.get("hasSeenIntro")?.value === "true";
+
   return (
     <html
       lang="en"
       className={`${jakarta.variable} ${robotoMono.variable} ${caveat.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col font-sans">
+      <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
-          <IntroLoader />
+          {!hasSeenIntro && <IntroLoader />}
           <Navbar />
           {children}
         </ThemeProvider>

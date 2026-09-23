@@ -27,3 +27,12 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* Skip Intro Loader on refresh */
+html.skip-intro #intro-loader {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}

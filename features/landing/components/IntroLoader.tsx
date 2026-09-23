@@ -40,6 +40,10 @@ export function IntroLoader() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    // The component only mounts if the server didn't find the cookie.
+    // So we immediately set the cookie for the next visit.
+    document.cookie = "hasSeenIntro=true; path=/; max-age=86400"; // Expires in 1 day
+
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 3000); // Exits right after the new slower animation finishes (approx 3s)
@@ -51,6 +55,7 @@ export function IntroLoader() {
     <AnimatePresence>
       {isLoading && (
         <motion.div
+          id="intro-loader"
           key="loader"
           exit={{
             opacity: 0,
