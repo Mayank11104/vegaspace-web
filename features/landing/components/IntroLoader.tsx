@@ -18,10 +18,11 @@ const VEGASPACE_PATHS = [
 
 // Helper to calculate custom spring and delay based on letter index
 const getDrawPhysics = (index: number) => ({
-  hidden: { pathLength: 0, opacity: 0 },
+  hidden: { pathLength: 0, opacity: 0, fill: "rgba(255, 255, 255, 0)" },
   visible: {
     pathLength: 1,
     opacity: 1,
+    fill: "rgba(255, 255, 255, 1)",
     transition: {
       pathLength: {
         type: "spring",
@@ -29,7 +30,8 @@ const getDrawPhysics = (index: number) => ({
         bounce: 0,
         delay: index * 0.2, // Slower sequence between letters (was 0.15)
       },
-      opacity: { duration: 0.1, delay: index * 0.22 },
+      opacity: { duration: 0.1, delay: index * 0.2 },
+      fill: { duration: 0.17, delay: index * 0.2 + 0.17, ease: "easeOut" },
     },
   },
 });
@@ -66,15 +68,7 @@ export function IntroLoader() {
             className="absolute w-[400px] h-[400px] bg-white/20 blur-[120px] rounded-full pointer-events-none"
           />
 
-          {/* Greeting Text */}
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 0.95, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="text-white text-xl md:text-2xl font-light tracking-wide mb-6"
-          >
-            Hello, welcome to the
-          </motion.p>
+
 
           {/* The SVG Path Tracing Animation */}
           <motion.svg
