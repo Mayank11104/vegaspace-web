@@ -24,6 +24,7 @@ export const metadata: Metadata = {
 
 import { Navbar } from "@/components/layout/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
+import { IntroLoader } from "@/features/landing/components/IntroLoader";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <body className="min-h-full flex flex-col font-sans">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
+          <IntroLoader />
           <Navbar />
           {children}
         </ThemeProvider>
