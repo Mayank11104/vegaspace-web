@@ -5,6 +5,7 @@ import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import Image from "next/image";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 const NAV_ITEMS = [
@@ -206,9 +207,7 @@ export function Navbar() {
       >
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 z-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-black dark:focus-visible:ring-white rounded-full">
-          <div className="w-8 h-8 bg-black dark:bg-white rounded-full flex items-center justify-center transition-colors">
-            <span className="text-white dark:text-black font-[450] text-xl leading-none">V</span>
-          </div>
+          <Image src="/logo.png" alt="Vegaspace Logo" width={256} height={64} className={cn("w-auto object-contain transition-all duration-300", isScrolled ? "h-9" : "h-11")} priority />
           <span className={cn(
             "font-[450] text-zinc-900 dark:text-white transition-all duration-300",
             isScrolled ? "text-lg" : "text-xl"
