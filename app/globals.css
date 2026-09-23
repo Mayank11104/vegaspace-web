@@ -26,6 +26,18 @@ body {
   min-height: 100vh;
 }
 
+/* Global Readability Mask for all typography on the background */
+h1, h2, h3, h4, h5, h6, p {
+  text-shadow: 0 0 8px var(--background), 0 0 16px var(--background), 0 0 24px var(--background);
+}
+
+/* Gradient text has a transparent fill, so text-shadow bleeds through it. 
+   We must remove text-shadow and use drop-shadow filter instead for gradient text. */
+.text-transparent {
+  text-shadow: none !important;
+  filter: drop-shadow(0 0 8px var(--background)) drop-shadow(0 0 16px var(--background)) drop-shadow(0 0 24px var(--background));
+}
+
 
 /* Skip Intro Loader on refresh */
 html.skip-intro #intro-loader {

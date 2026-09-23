@@ -9,7 +9,7 @@ export default function DocsPage() {
     <main className="flex w-full font-sans overflow-hidden min-h-screen pt-24 px-4 max-w-7xl mx-auto">
       
       {/* Left Sidebar */}
-      <aside className="hidden md:flex w-64 shrink-0 flex-col gap-6 pt-8 pr-6 border-r border-white/5 h-[calc(100vh-6rem)] sticky top-24 overflow-y-auto">
+      <aside className="hidden md:flex w-64 shrink-0 flex-col gap-6 pt-8 pr-6 border-r border-black/5 dark:border-white/5 h-[calc(100vh-6rem)] sticky top-24 overflow-y-auto">
         <div>
           <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-500 mb-3">Getting Started</h4>
           <div className="flex flex-col gap-2 text-sm text-zinc-600 dark:text-zinc-400">
@@ -48,23 +48,23 @@ export default function DocsPage() {
           transition={{ duration: 0.5 }}
         >
           <h1 className="text-4xl font-bold text-zinc-900 dark:text-white mb-6">Introduction</h1>
-          <p className="text-lg text-zinc-900 dark:text-zinc-300 mb-8">What is UDE?</p>
+          <p className="text-lg text-zinc-900 dark:text-zinc-300 mb-8">What is Vegaspace?</p>
           
           <div className="prose dark:prose-invert prose-zinc max-w-none">
-            <p>UDE is a unified developer environment designed to bring development workflows into one connected workspace.</p>
+            <p>Vegaspace is an AI-orchestrated unified workspace designed to bring all your development workflows into one connected environment.</p>
             
-            <h2 className="text-2xl font-semibold text-zinc-900 dark:text-white mt-12 mb-4 border-b border-white/10 pb-2">Why UDE exists</h2>
-            <p>Modern software development requires jumping between editors, terminals, docker dashboards, and cloud consoles. UDE bridges these environments so you never lose context.</p>
+            <h2 className="text-2xl font-semibold text-zinc-900 dark:text-white mt-12 mb-4 border-b border-black/10 dark:border-white/10 pb-2">Why Vegaspace exists</h2>
+            <p>Modern software development requires jumping between editors, terminals, docker dashboards, and cloud consoles. Vegaspace bridges these environments into one hyper-fast system so you never lose context.</p>
 
-            <h2 className="text-2xl font-semibold text-zinc-900 dark:text-white mt-12 mb-4 border-b border-white/10 pb-2">Core concepts</h2>
+            <h2 className="text-2xl font-semibold text-zinc-900 dark:text-white mt-12 mb-4 border-b border-black/10 dark:border-white/10 pb-2">Core concepts</h2>
             <ul>
-              <li><strong>Workspace:</strong> Your integrated IDE and terminal environment.</li>
-              <li><strong>Context Engine:</strong> AI that understands your repository and logs.</li>
-              <li><strong>Workflows:</strong> Automated paths for building and deploying.</li>
+              <li><strong>Workspace:</strong> Your fully integrated IDE, terminal, and deployment environment.</li>
+              <li><strong>Context Engine:</strong> AI that understands your repository, logs, and architecture.</li>
+              <li><strong>Workflows:</strong> Automated, integrated paths for building and deploying.</li>
             </ul>
           </div>
 
-          <div className="flex justify-between items-center mt-20 pt-8 border-t border-white/10">
+          <div className="flex justify-between items-center mt-20 pt-8 border-t border-black/10 dark:border-white/10">
             <div />
             <Link href="#" className="flex flex-col text-right group">
               <span className="text-xs text-zinc-500 mb-1">Next</span>
@@ -77,9 +77,9 @@ export default function DocsPage() {
       {/* Right Sidebar */}
       <aside className="hidden lg:flex w-48 shrink-0 flex-col pt-8 pl-6 h-[calc(100vh-6rem)] sticky top-24">
         <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-500 mb-3">On this page</h4>
-        <div className="flex flex-col gap-2 text-xs text-zinc-600 dark:text-zinc-400 border-l border-white/10 pl-3">
-          <span className="text-zinc-900 dark:text-white font-medium cursor-pointer -ml-[13px] pl-3 border-l-2 border-orange-500">What is UDE?</span>
-          <span className="hover:text-zinc-900 dark:text-zinc-300 cursor-pointer">Why UDE exists</span>
+        <div className="flex flex-col gap-2 text-xs text-zinc-600 dark:text-zinc-400 border-l border-black/10 dark:border-white/10 pl-3">
+          <span className="text-zinc-900 dark:text-white font-medium cursor-pointer -ml-[13px] pl-3 border-l-2 border-[#D27D2D] dark:border-[#FDBA74]">What is Vegaspace?</span>
+          <span className="hover:text-zinc-900 dark:text-zinc-300 cursor-pointer">Why Vegaspace exists</span>
           <span className="hover:text-zinc-900 dark:text-zinc-300 cursor-pointer">Core concepts</span>
         </div>
       </aside>

@@ -28,8 +28,9 @@ export function HeroSection() {
         style={{ color: isDark ? "#ffffff" : "#0F172A" }}
       >
         {/* Main Content */}
-        <div className="relative flex flex-col items-center text-center max-w-4xl px-6 mt-10 z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-sm mb-8 transition-colors">
+        <div className="relative flex flex-col items-center text-center max-w-4xl px-8 py-12 mt-10 z-10">
+
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-sm mb-8 transition-colors relative z-10">
             <span className="text-xs font-semibold text-zinc-700 dark:text-zinc-300 tracking-wide uppercase">The AI-Orchestrated Unified Workspace</span>
           </div>
 
