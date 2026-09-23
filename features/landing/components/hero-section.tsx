@@ -4,6 +4,7 @@ import React from "react";
 import { ChevronRight } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export function HeroSection() {
   const { resolvedTheme } = useTheme();
