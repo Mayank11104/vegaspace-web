@@ -5,6 +5,7 @@ import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 export function Navbar() {
   const { scrollY } = useScroll();
@@ -33,36 +34,36 @@ export function Navbar() {
         className={cn(
           "pointer-events-auto relative flex items-center justify-between rounded-full border transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]",
           isScrolled
-            ? "bg-black/60 backdrop-blur-xl shadow-lg shadow-black/20 border-white/10 px-6 py-3.5 w-full max-w-4xl"
+            ? "bg-white/60 dark:bg-black/60 backdrop-blur-xl shadow-lg shadow-black/5 dark:shadow-black/20 border-black/10 dark:border-white/10 px-6 py-3.5 w-full max-w-4xl"
             : "bg-transparent backdrop-blur-none border-transparent px-8 py-5 w-full max-w-7xl"
         )}
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 group z-10" onClick={() => setMobileMenuOpen(false)}>
-          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-500 to-purple-600 flex items-center justify-center shadow-inner">
-            <span className="text-white font-bold text-lg group-hover:scale-110 transition-transform">V</span>
+        <Link href="/" className="flex items-center gap-2 z-10">
+          <div className="w-8 h-8 bg-black dark:bg-white rounded-full flex items-center justify-center transition-colors">
+            <span className="text-white dark:text-black font-[450] text-xl leading-none">V</span>
           </div>
           <span className={cn(
-            "font-bold text-white transition-all duration-300",
+            "font-[450] text-zinc-900 dark:text-white transition-all duration-300",
             isScrolled ? "text-lg" : "text-xl"
-          )}>
-            Vegaspace
-          </span>
+          )}>Vegaspace</span>
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8 z-10 absolute left-1/2 -translate-x-1/2">
-          <Link href="#features" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Features</Link>
-          <Link href="#docs" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Docs</Link>
-          <Link href="#pricing" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Pricing</Link>
-        </div>
+        <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-8">
+          <Link href="#features" className="text-sm font-[450] text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-colors">Features</Link>
+          <Link href="#integrations" className="text-sm font-[450] text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-colors">Integrations</Link>
+          <Link href="#pricing" className="text-sm font-[450] text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-colors">Pricing</Link>
+          <Link href="#about" className="text-sm font-[450] text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-colors">About</Link>
+        </nav>
 
         {/* Desktop CTA */}
-        <div className="hidden md:flex items-center z-10">
+        <div className="hidden md:flex items-center gap-4 z-10">
+          <ThemeToggle />
           <Link
             href="#early-access"
             className={cn(
-              "rounded-full bg-white text-zinc-950 font-semibold transition-all duration-300 hover:bg-zinc-200 shadow-sm",
+              "rounded-full bg-black text-white dark:bg-white dark:text-zinc-950 font-[450] transition-all duration-300 hover:bg-zinc-800 dark:hover:bg-zinc-200 shadow-sm",
               isScrolled ? "px-5 py-2 text-sm" : "px-6 py-2.5 text-base"
             )}
           >
@@ -72,7 +73,7 @@ export function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-white z-10 p-2 ml-auto"
+          className="md:hidden text-zinc-900 dark:text-white z-10 p-2 ml-auto"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle Menu"
         >
