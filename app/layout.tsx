@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Roboto_Flex, Roboto_Mono, Caveat } from "next/font/google";
+import { Plus_Jakarta_Sans, Roboto_Mono, Caveat } from "next/font/google";
 import "./globals.css";
 
-const robotoFlex = Roboto_Flex({
-  variable: "--font-roboto-flex",
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
 });
 
@@ -29,11 +29,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${robotoFlex.variable} ${robotoMono.variable} ${caveat.variable} h-full antialiased`}
+      className={`${jakarta.variable} ${robotoMono.variable} ${caveat.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col font-sans">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
           <Navbar />
           {children}
         </ThemeProvider>
