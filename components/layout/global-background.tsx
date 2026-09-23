@@ -3,6 +3,7 @@
 import React from "react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 export function GlobalBackground() {
   const { resolvedTheme } = useTheme();
@@ -38,9 +39,38 @@ export function GlobalBackground() {
       />
 
       {/* Orbital Rings */}
-      <div className="absolute top-[40%] left-1/2 -translate-x-1/2 w-[1800px] h-[1800px] rounded-full border border-black/15 dark:border-white/5 transition-colors" />
-      <div className="absolute top-[50%] left-1/2 -translate-x-1/2 w-[1400px] h-[1400px] rounded-full border border-black/15 dark:border-white/5 transition-colors" />
-      <div className="absolute top-[60%] left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] rounded-full border border-black/15 dark:border-white/5 transition-colors" />
+      <div className="absolute top-[40%] left-1/2 -translate-x-1/2 w-[1800px] h-[1800px]">
+        <motion.div 
+          animate={{ rotate: 360 }}
+          transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+          className="w-full h-full rounded-full border-[0.5px] border-black/10 dark:border-white/[0.03] transition-colors relative"
+        >
+          <div className="absolute -top-[1px] left-1/2 -translate-x-1/2 w-80 h-[2px] bg-gradient-to-r from-transparent via-black/30 dark:via-white/30 to-transparent blur-[1px]" />
+          <div className="absolute -bottom-[1px] left-1/2 -translate-x-1/2 w-80 h-[2px] bg-gradient-to-r from-transparent via-black/30 dark:via-white/30 to-transparent blur-[1px]" />
+        </motion.div>
+      </div>
+      
+      <div className="absolute top-[50%] left-1/2 -translate-x-1/2 w-[1400px] h-[1400px]">
+        <motion.div 
+          animate={{ rotate: -360 }}
+          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+          className="w-full h-full rounded-full border-[0.5px] border-black/10 dark:border-white/[0.03] transition-colors relative"
+        >
+          <div className="absolute top-1/2 -left-[1px] -translate-y-1/2 h-64 w-[2px] bg-gradient-to-b from-transparent via-black/40 dark:via-white/40 to-transparent blur-[1px]" />
+          <div className="absolute top-1/2 -right-[1px] -translate-y-1/2 h-64 w-[2px] bg-gradient-to-b from-transparent via-black/40 dark:via-white/40 to-transparent blur-[1px]" />
+        </motion.div>
+      </div>
+
+      <div className="absolute top-[60%] left-1/2 -translate-x-1/2 w-[1000px] h-[1000px]">
+        <motion.div 
+          animate={{ rotate: 360 }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          className="w-full h-full rounded-full border-[0.5px] border-black/10 dark:border-white/[0.03] transition-colors relative"
+        >
+          <div className="absolute -top-[1px] left-1/2 -translate-x-1/2 w-48 h-[2px] bg-gradient-to-r from-transparent via-black/50 dark:via-white/50 to-transparent blur-[1px]" />
+          <div className="absolute -bottom-[1px] left-1/2 -translate-x-1/2 w-48 h-[2px] bg-gradient-to-r from-transparent via-black/50 dark:via-white/50 to-transparent blur-[1px]" />
+        </motion.div>
+      </div>
     </div>
   );
 }
