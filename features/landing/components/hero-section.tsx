@@ -13,38 +13,13 @@ export function HeroSection() {
     setMounted(true);
   }, []);
 
-  if (!mounted) return <section className="min-h-screen bg-[#0E0E0E]" />;
+  if (!mounted) return <section className="min-h-screen" />;
 
   const isDark = resolvedTheme === "dark";
 
   return (
     <>
-      {/* 1. FIXED BACKGROUND LAYER (Glassmorphism base) */}
-      <div
-        className="fixed inset-0 z-0 transition-colors duration-500 overflow-hidden"
-        style={{
-          background: isDark
-            ? "#0E0E0E"
-            : "linear-gradient(135deg, #FFFBFA 0%, #FDEEE1 100%)"
-        }}
-      >
-        {/* Massive Bottom-Anchored Radial Glow */}
-        <div
-          className="absolute bottom-[-20%] left-1/2 -translate-x-1/2 w-[1200px] h-[800px] blur-[100px] pointer-events-none transition-colors duration-700"
-          style={{
-            background: isDark
-              ? "radial-gradient(ellipse at center, rgba(216,234,215,0.2), rgba(216,234,215,0.06), transparent)"
-              : "radial-gradient(ellipse at center, rgba(255,255,255,0.8), rgba(255,255,255,0.4), transparent)"
-          }}
-        />
-
-        {/* Orbital Rings */}
-        <div className="absolute top-[40%] left-1/2 -translate-x-1/2 w-[1800px] h-[1800px] rounded-full border border-black/15 dark:border-white/5 pointer-events-none transition-colors" />
-        <div className="absolute top-[50%] left-1/2 -translate-x-1/2 w-[1400px] h-[1400px] rounded-full border border-black/15 dark:border-white/5 pointer-events-none transition-colors" />
-        <div className="absolute top-[60%] left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] rounded-full border border-black/15 dark:border-white/5 pointer-events-none transition-colors" />
-
-
-      </div>
+      {/* 1. FIXED BACKGROUND LAYER (Now handled globally by GlobalBackground in layout.tsx) */}
 
       {/* 2. SCROLLING CONTENT LAYER */}
       <section
@@ -70,7 +45,7 @@ export function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-4">
-            <button
+            <Link href="/docs"
               className="px-8 py-3.5 rounded-full font-semibold transition-colors shadow-sm"
               style={{
                 backgroundColor: isDark ? "#DCE1E6" : "#000000",
@@ -78,8 +53,8 @@ export function HeroSection() {
               }}
             >
               Free Resources
-            </button>
-            <button className="group flex items-center gap-2 px-8 py-3.5 rounded-full border text-sm font-semibold transition-all hover:bg-black/5 dark:hover:bg-white/5"
+            </Link>
+            <Link href="/download" className="group flex items-center gap-2 px-8 py-3.5 rounded-full border text-sm font-semibold transition-all hover:bg-black/5 dark:hover:bg-white/5"
               style={{
                 borderColor: isDark ? "rgba(255,255,255,0.2)" : "rgba(0,0,0,0.1)",
                 color: isDark ? "#DCE1E6" : "#0F172A"
@@ -87,7 +62,7 @@ export function HeroSection() {
             >
               Vegaspace Pro
               <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </Link>
           </div>
         </div>
 

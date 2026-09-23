@@ -12,39 +12,49 @@ const NAV_ITEMS = [
     title: "Product",
     description: "What UDE is",
     items: [
-      { name: "Overview", href: "#overview" },
-      { name: "AI Orchestra", href: "#ai" },
-      { name: "Role-Based Workspaces", href: "#roles" },
-      { name: "Integrations", href: "#integrations" },
+      { name: "Overview", href: "/#overview" },
+      { name: "Why UDE", href: "/#why-ude" },
+      { name: "AI-Native Development", href: "/#ai" },
+      { name: "Role-Based Workspaces", href: "/#roles" },
+      { name: "Architecture", href: "/architecture" },
+      { name: "Security & Privacy", href: "/security" },
     ],
   },
   {
     title: "Features",
     description: "What UDE can do",
     items: [
-      { name: "Code Editor", href: "#code" },
-      { name: "Integrated Terminal", href: "#terminal" },
-      { name: "Docker Support", href: "#docker" },
-      { name: "CI/CD Pipelines", href: "#cicd" },
+      { name: "Code Workspace", href: "/features#code" },
+      { name: "AI Assistant", href: "/features#ai" },
+      { name: "Integrated Terminal", href: "/features#terminal" },
+      { name: "Docker", href: "/features#docker" },
+      { name: "CI/CD", href: "/features#cicd" },
+      { name: "Terraform", href: "/features#terraform" },
+      { name: "Monitoring", href: "/features#monitoring" },
+      { name: "Architecture Builder", href: "/features#architecture-builder" },
+      { name: "Learning Workspace", href: "/features#learning" },
     ],
   },
   {
     title: "Workflows",
     description: "What you accomplish with UDE",
     items: [
-      { name: "Build", href: "#build" },
-      { name: "Debug", href: "#debug" },
-      { name: "Deploy", href: "#deploy" },
-      { name: "Monitor", href: "#monitor" },
+      { name: "Build", href: "/workflows#build" },
+      { name: "Debug", href: "/workflows#debug" },
+      { name: "Deploy", href: "/workflows#deploy" },
+      { name: "Monitor", href: "/workflows#monitor" },
+      { name: "Design", href: "/workflows#design" },
+      { name: "Learn", href: "/workflows#learn" },
     ],
   },
   {
     title: "Docs",
     description: "How you use UDE",
     items: [
-      { name: "Getting Started", href: "#start" },
-      { name: "Architecture Guide", href: "#architecture" },
-      { name: "API Reference", href: "#api" },
+      { name: "Getting Started", href: "/docs#getting-started" },
+      { name: "Core Concepts", href: "/docs#core-concepts" },
+      { name: "Guides", href: "/docs#guides" },
+      { name: "Reference", href: "/docs#reference" },
     ],
   },
 ];
@@ -216,7 +226,7 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-4 z-10">
           <ThemeToggle />
           <Link
-            href="#download"
+            href="/download"
             className={cn(
               "rounded-full bg-black text-white dark:bg-white dark:text-zinc-950 font-[450] transition-all duration-300 hover:bg-zinc-800 dark:hover:bg-zinc-200 shadow-sm flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-black dark:focus-visible:ring-white",
               isScrolled ? "px-5 py-2 text-sm" : "px-6 py-2.5 text-base"
@@ -250,7 +260,7 @@ export function Navbar() {
             {NAV_ITEMS.map((item) => (
               <MobileNavItem key={item.title} item={item} setIsMenuOpen={setMobileMenuOpen} />
             ))}
-            <Link onClick={() => setMobileMenuOpen(false)} href="#download" className="text-sm font-bold text-zinc-950 bg-white px-4 py-3 rounded-xl text-center mt-3 hover:bg-zinc-200 transition-colors">
+            <Link onClick={() => setMobileMenuOpen(false)} href="/download" className="text-sm font-bold text-zinc-950 bg-white px-4 py-3 rounded-xl text-center mt-3 hover:bg-zinc-200 transition-colors">
               Download UDE
             </Link>
           </motion.div>

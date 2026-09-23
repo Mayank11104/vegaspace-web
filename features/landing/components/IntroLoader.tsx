@@ -17,7 +17,7 @@ const VEGASPACE_PATHS = [
 ];
 
 // Helper to calculate custom spring and delay based on letter index
-const getDrawPhysics = (index: number) => ({
+const getDrawPhysics = (index: number): any => ({
   hidden: { pathLength: 0, opacity: 0, fill: "rgba(255, 255, 255, 0)" },
   visible: {
     pathLength: 1,

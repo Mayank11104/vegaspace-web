@@ -27,6 +27,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { IntroLoader } from "@/features/landing/components/IntroLoader";
 import { cookies } from "next/headers";
 
+import { GlobalBackground } from "@/components/layout/global-background";
+
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const cookieStore = await cookies();
   const hasSeenIntro = cookieStore.get("hasSeenIntro")?.value === "true";
@@ -37,8 +39,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       className={`${jakarta.variable} ${robotoMono.variable} ${caveat.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
+      <body className="min-h-full flex flex-col font-sans bg-transparent" suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
+          <GlobalBackground />
           {!hasSeenIntro && <IntroLoader />}
           <Navbar />
           {children}
