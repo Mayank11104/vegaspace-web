@@ -209,9 +209,9 @@ export function Navbar() {
         <Link href="/" className="flex items-center gap-2 z-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-black dark:focus-visible:ring-white rounded-full">
           <Image src="/logo.png" alt="Vegaspace Logo" width={256} height={64} className={cn("w-auto object-contain transition-all duration-300", isScrolled ? "h-9" : "h-11")} priority />
           <span className={cn(
-            "font-[450] text-zinc-900 dark:text-white transition-all duration-300",
-            isScrolled ? "text-lg" : "text-xl"
-          )}>Vegaspace</span>
+            "font-extrabold text-zinc-900 dark:text-white transition-all duration-300 tracking-tight",
+            isScrolled ? "text-xl" : "text-2xl"
+          )}>VegaSpace</span>
         </Link>
 
         {/* Desktop Links */}
